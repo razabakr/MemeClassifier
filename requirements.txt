@@ -1,0 +1,8 @@
+pytorch
+numpy
+pandas
+scikit-learn
+opencv-python: For image processing tasks.
+selenium: browsing interactions with Twitter without using API just for initial testing
+webdriver-manager: managing browser drivers for selenium
+python-dotenv: For managing environment variables, useful for API keys and other configurations.
