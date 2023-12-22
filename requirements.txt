@@ -7,3 +7,5 @@ opencv-python
 selenium
 webdriver-manager
 python-dotenv
+Pillow
+webp
