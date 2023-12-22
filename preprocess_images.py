@@ -1,6 +1,9 @@
 from PIL import Image
 import torchvision.transforms as transforms
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the variables from .env
 
 def preprocess_images(directory, target_size=(256, 256)):
     transform = transforms.Compose([
@@ -14,8 +17,7 @@ def preprocess_images(directory, target_size=(256, 256)):
             file_path = os.path.join(directory, filename)
             image = Image.open(file_path)
             image = transform(image)
-            # Save or use the processed image as needed
-            # For example, you can save it back to disk or collect them in a list
 
-# Replace with the path to your images directory
-preprocess_images('/Users/razabakr/Desktop/MemeClassifier/ml_model/data/Images')
+#set the directory as the directory with my images
+image_directory = os.getenv('IMAGE_DIRECTORY')
+preprocess_images(image_directory)

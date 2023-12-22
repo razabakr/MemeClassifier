@@ -1,6 +1,9 @@
 import os
 import random
 import csv
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the variables from .env
 
 def auto_rate_images(directory, output_csv):
     scores = {}
@@ -20,6 +23,6 @@ def auto_rate_images(directory, output_csv):
     print(f"Scores written to {output_csv}")
 
 # Replace with your images directory and desired output CSV file path
-directory = '/Users/razabakr/Desktop/MemeClassifier/ml_model/data/Images'
-output_csv = '/Users/razabakr/Desktop/MemeClassifier/ml_model/data/scores.csv'
+directory = os.getenv('IMAGE_DIRECTORY')
+output_csv = os.getenv('SCORES_CSV')
 auto_rate_images(directory, output_csv)
